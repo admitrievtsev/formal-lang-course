@@ -1,5 +1,7 @@
+import pytest
 from filecmp import cmp
 from os import remove
+
 
 from project.task1 import process_graph, save_graph
 
