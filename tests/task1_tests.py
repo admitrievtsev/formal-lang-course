@@ -1,4 +1,4 @@
-import pytest
+import pytest  # noqa: F401
 from filecmp import cmp
 from os import remove
 
