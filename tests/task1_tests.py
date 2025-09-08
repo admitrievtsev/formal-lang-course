@@ -8,9 +8,25 @@ def test_graph_reporting():
     report = process_graph("generations")
     assert report.nodes_num == 273
     assert report.edges_num == 129
-    assert report.labels == ['type', 'first', 'rest', 'onProperty', 'intersectionOf', 'equivalentClass',
-                             'someValuesFrom', 'hasValue', 'hasSex', 'hasChild', 'hasParent', 'inverseOf', 'sameAs',
-                             'hasSibling', 'oneOf', 'range', 'versionInfo']
+    assert report.labels == [
+        "type",
+        "first",
+        "rest",
+        "onProperty",
+        "intersectionOf",
+        "equivalentClass",
+        "someValuesFrom",
+        "hasValue",
+        "hasSex",
+        "hasChild",
+        "hasParent",
+        "inverseOf",
+        "sameAs",
+        "hasSibling",
+        "oneOf",
+        "range",
+        "versionInfo",
+    ]
 
 
 def test_two_cycles_graph_saving_simple():

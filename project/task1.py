@@ -13,10 +13,17 @@ class GraphReport:
 def process_graph(name) -> GraphReport:
     graph_path = cfpq_data.download(name)
     graph = cfpq_data.graph_from_csv(graph_path)
-    return GraphReport(edges_num=graph.number_of_nodes(), nodes_num=graph.number_of_edges(),
-                       labels=cfpq_data.get_sorted_labels(graph), )
+    return GraphReport(
+        edges_num=graph.number_of_nodes(),
+        nodes_num=graph.number_of_edges(),
+        labels=cfpq_data.get_sorted_labels(graph),
+    )
 
 
 def save_graph(cycle_nodes_num, labels, path):
     networkx.nx_pydot.write_dot(
-        cfpq_data.labeled_two_cycles_graph(cycle_nodes_num[0], cycle_nodes_num[1], labels=labels), path)
+        cfpq_data.labeled_two_cycles_graph(
+            cycle_nodes_num[0], cycle_nodes_num[1], labels=labels
+        ),
+        path,
+    )
