@@ -3,7 +3,10 @@ from filecmp import cmp
 from os import remove
 
 
-from project.graph_processor import generate_graph_report, generate_and_save_graph_with_two_cycles
+from project.graph_processor import (
+    generate_graph_report,
+    generate_and_save_graph_with_two_cycles,
+)
 
 
 def test_graph_reporting():
