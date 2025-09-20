@@ -21,7 +21,7 @@ def regex_to_dfa(regex: str) -> DeterministicFiniteAutomaton:
     Devuelve un DFA para la expresión dada.
     """
     epsilon_nfa = Regex(regex).to_epsilon_nfa()
-    return epsilon_nfa.to_deterministic()
+    return epsilon_nfa.to_deterministic().minimize()
 
 
 def graph_to_nfa(
