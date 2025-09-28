@@ -36,11 +36,11 @@ def test_graph_reporting():
 
 def test_two_cycles_graph_saving_simple():
     generate_and_save_graph_with_two_cycles([1, 2], ["label1", "label2"], "temp1.dot")
-    cmp("temp1.dot", "tests/resources/task1_cyclecheck1.dot")
+    cmp("temp1.dot", "../tests/resources/task1_cyclecheck1.dot")
     remove("temp1.dot")
 
 
 def test_two_cycles_graph_saving_multiple():
     generate_and_save_graph_with_two_cycles([10, 20], ["label1", "label2"], "temp2.dot")
-    cmp("temp2.dot", "tests/resources/task1_cyclecheck2.dot")
+    cmp("temp2.dot", "../tests/resources/task1_cyclecheck2.dot")
     remove("temp2.dot")
