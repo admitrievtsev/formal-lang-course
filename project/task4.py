@@ -52,10 +52,10 @@ def ms_bfs_based_rpq(
                 for symbol in symbols
             }.values()
         )
-        if (visited >= front).toarray().all():
-            break
-        else:
+        if (visited < front).toarray().any():
             visited += front
+        else:
+            break
 
     set_reachable = set()
     for idx, state_from in enumerate(adj_matrix_of_graph.start_states):
