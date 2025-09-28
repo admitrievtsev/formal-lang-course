@@ -1,4 +1,3 @@
-import numpy as np
 from networkx.classes import MultiDiGraph
 from scipy.sparse import vstack
 from scipy.sparse import csr_matrix
