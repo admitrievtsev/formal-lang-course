@@ -37,17 +37,22 @@ def ms_bfs_based_rpq(
 
     symbols = adj_matrix_of_graph.symbols & adj_matrix_of_regex.symbols
     while True:
-        front = sum({
-            symbol: vstack(
-                [
-                    (graph_bool_t[symbol] @ front[idx * g_size : g_size * (idx + 1)])
-                    for idx in range(0, len(adj_matrix_of_graph.start_states))
-                ],
-                format="csr",
-            )
-            @ adj_matrix_of_regex.boolean_matrix[symbol]
-            for symbol in symbols
-        }.values())
+        front = sum(
+            {
+                symbol: vstack(
+                    [
+                        (
+                            graph_bool_t[symbol]
+                            @ front[idx * g_size : g_size * (idx + 1)]
+                        )
+                        for idx in range(0, len(adj_matrix_of_graph.start_states))
+                    ],
+                    format="csr",
+                )
+                @ adj_matrix_of_regex.boolean_matrix[symbol]
+                for symbol in symbols
+            }.values()
+        )
         if (visited >= front).toarray().all():
             break
         else:
