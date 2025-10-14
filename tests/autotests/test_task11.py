@@ -1,4 +1,3 @@
-"""
 # This file contains test cases that you need to pass to get a grade
 # You MUST NOT touch anything here except ONE block below
 # You CAN modify this file IF AND ONLY IF you have found a bug and are willing to fix it
@@ -86,4 +85,3 @@ class TestParser:
             program_bad = reg.sub("", program)
             _, is_valid_bad = program_to_tree(program_bad)
             assert not is_valid_bad
-"""
