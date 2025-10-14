@@ -29,3 +29,9 @@ def make_boolean_matrix_from_fa(symbols, states, finite_automata, size):
 
 def make_set_idx(map, states):
     return set(map[s] for s in states)
+
+
+def transpose_boolean_matrix(boolean_matrix):
+    return {
+        symbol: boolean_matrix[symbol].transpose() for symbol in boolean_matrix.keys()
+    }
